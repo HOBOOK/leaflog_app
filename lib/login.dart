@@ -68,12 +68,12 @@ class _LoginPageState extends State<LoginPage> {
 
                     //Login Logic start here
                     Map<String, String> data = {
-                      "username": _userIdController.text,
+                      "email": _userIdController.text,
                       "password": _passwordController.text,
                     };
                     var response =
                         await networkHandler.post("/auth/login", data);
-
+                    print(response.body);
                     if (response.statusCode == 200 ||
                         response.statusCode == 201) {
                       Map<String, dynamic> output = json.decode(response.body);
@@ -90,8 +90,6 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           (route) => false);
                     } else {
-                      // login 실패
-                      // String output = json.decode(response.body);
                       setState(() {
                         validate = false;
                         errorText = 'Id or Password is Incorrect';

@@ -81,9 +81,7 @@ class _HomeState extends State<Home> {
       margin: EdgeInsets.all(0.0),
       popActionScreens: PopActionScreensType.all,
       bottomScreenMargin: 0.0,
-      selectedTabScreenContext: (BuildContext? context) {
-        testContext = context;
-      },
+      selectedTabScreenContext: (BuildContext? context) {},
       decoration: NavBarDecoration(
           colorBehindNavBar: Colors.indigo,
           borderRadius: BorderRadius.circular(20.0)),
